@@ -1,0 +1,32 @@
+name: ISO
+
+on:
+  schedule:
+    - cron: "00 07 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  bluebuild:
+    name: Build Custom Image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Setup Bluebuild
+        run: docker run --pull always --rm ghcr.io/blue-build/cli:latest-installer | bash
+
+      - name: Build ISO
+        run: bluebuild generate-iso --iso-name asbest-os.iso image ghcr.io/moedevelops/asbest-os:latest
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ISO-Files
+          path: asbest-os.iso*
+          retention-days: 14
