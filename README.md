@@ -1,50 +1,14 @@
-# asbest-os &nbsp; [![bluebuild build badge](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml/badge.svg)](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml)
+# AsBest-OS &nbsp; [![bluebuild build badge](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml/badge.svg)](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml)
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
+## About
 
-After setup, it is recommended you update this README to describe your custom image.
+AsBest-OS is a personal OS using [BlueBuild](https://blue-build.org/) based on [Kinoite](https://fedoraproject.org/atomic-desktops/kinoite/) and [uBlue](https://universal-blue.org/).
+It is primarily focused on development and Gaming.
 
 ## Installation
 
-> [!WARNING]  
-> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
+1. Get an ISO from the latest [ISO-Build](https://github.com/MoeDevelops/asbest-os/actions/workflows/iso.yml)
 
-To rebase an existing atomic Fedora installation to the latest build:
+2. Flash it to an USB-Drive (min. 8GB) with Tools like [Balena Etcher](https://etcher.balena.io/) or [Ventoy](https://www.ventoy.net/)
 
-- First rebase to the unsigned image, to get the proper signing keys and policies installed:
-
-  ```sh
-  rpm-ostree rebase ostree-unverified-registry:ghcr.io/moedevelops/asbest-os:latest
-  ```
-
-- Reboot to complete the rebase:
-
-  ```sh
-  systemctl reboot
-  ```
-
-- Then rebase to the signed image, like so:
-
-  ```sh
-  rpm-ostree rebase ostree-image-signed:docker://ghcr.io/moedevelops/asbest-os:latest
-  ```
-
-- Reboot again to complete the installation
-
-  ```sh
-  systemctl reboot
-  ```
-
-The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
-
-## ISO
-
-If build on Fedora Atomic, you can generate an offline ISO with the instructions available [here](https://blue-build.org/learn/universal-blue/#fresh-install-from-an-iso). These ISOs cannot unfortunately be distributed on GitHub for free due to large sizes, so for public projects something else has to be used for hosting.
-
-## Verification
-
-These images are signed with [Sigstore](https://www.sigstore.dev/)'s [cosign](https://github.com/sigstore/cosign). You can verify the signature by downloading the `cosign.pub` file from this repo and running the following command:
-
-```bash
-cosign verify --key cosign.pub ghcr.io/moedevelops/asbest-os
-```
+3. Boot from the USB-Drive and follow the instructions
