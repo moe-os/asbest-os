@@ -13,15 +13,32 @@ modules:
         destination: /
 
   - type: rpm-ostree
+    repos:
+      - https://gist.githubusercontent.com/MoeDevelops/84b0dbc28bc48bd03367756f34bed49a/raw/381cda8fc7803df601856ff87d0d81884e16ad47/vscode.repo
+      - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
+      - https://repository.mullvad.net/rpm/stable/mullvad.repo
+      - https://mise.jdx.dev/rpm/mise.repo
     install:
+      # Development
+      - automake
+      - code
+      - gcc
+      - mise
+      - zed
+      # Dependencies
+      - ncurses-devel
+      - openssl-devel
+      # Media
       - kdenlive
       - fastfetch
       - ffmpeg
       - gimp
-      - kate
-      - steam-devices
       - vlc
-
+      # System
+      - btop
+      - kate
+      - mullvad-vpn
+      - steam-devices
     remove:
       - nvtop
       - htop
