@@ -42,8 +42,6 @@ modules:
     remove:
       - nvtop
       - htop
-      - firefox
-      - firefox-langpacks
 
   - type: default-flatpaks
     notify: true
