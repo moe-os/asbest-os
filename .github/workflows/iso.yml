@@ -29,4 +29,4 @@ jobs:
         with:
           name: ISO-Files
           path: asbest-os.iso*
-          retention-days: 14
+          retention-days: 8
