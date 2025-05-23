@@ -30,12 +30,12 @@ modules:
       - openssl-devel
       # Media
       - kdenlive
-      - fastfetch
       - ffmpeg
       - gimp
       - vlc
       # System
       - btop
+      - fastfetch
       - kate
       - mullvad-vpn
       - steam-devices

@@ -1,4 +1,4 @@
-# AsBest-OS &nbsp; [![bluebuild build badge](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml/badge.svg)](https://github.com/moedevelops/asbest-os/actions/workflows/build.yml)
+# AsBest-OS &nbsp; [![bluebuild build badge](https://github.com/moe-os/asbest-os/actions/workflows/build.yml/badge.svg)](https://github.com/moe-os/asbest-os/actions/workflows/build.yml)
 
 ## About
 
@@ -7,7 +7,7 @@ It is primarily focused on development and Gaming.
 
 ## Installation
 
-1. Get an ISO from the latest [ISO-Build](https://github.com/MoeDevelops/asbest-os/actions/workflows/iso.yml)
+1. Get an ISO from the latest [ISO-Build](https://github.com/moe-os/asbest-os/actions/workflows/iso.yml)
 
 2. Flash it to an USB-Drive (min. 8GB) with Tools like [Balena Etcher](https://etcher.balena.io/) or [Ventoy](https://www.ventoy.net/)
 
