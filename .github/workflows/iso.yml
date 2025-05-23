@@ -22,7 +22,7 @@ jobs:
         run: docker run --pull always --rm ghcr.io/blue-build/cli:latest-installer | bash
 
       - name: Build ISO
-        run: bluebuild generate-iso --iso-name asbest-os.iso image ghcr.io/moedevelops/asbest-os:latest
+        run: bluebuild generate-iso --iso-name asbest-os.iso image ghcr.io/moe-os/asbest-os:latest
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
