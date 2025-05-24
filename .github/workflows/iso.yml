@@ -13,10 +13,6 @@ jobs:
   bluebuild:
     name: Build Custom Image
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
     steps:
       - name: Setup Bluebuild
         run: docker run --pull always --rm ghcr.io/blue-build/cli:latest-installer | bash
@@ -24,9 +20,22 @@ jobs:
       - name: Build ISO
         run: bluebuild generate-iso --iso-name asbest-os.iso image ghcr.io/moe-os/asbest-os:latest
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload to S3
+        uses: yakubique/minio-upload@v1.1.3
         with:
-          name: ISO-Files
-          path: asbest-os.iso*
-          retention-days: 8
+          endpoint: ${{ secrets.S3_URL}}
+          access_key: ${{ secrets.S3_KEY_ID }}
+          secret_key: ${{ secrets.S3_SECRET_ACCESS_KEY}}
+          bucket: ${{ secrets.S3_BUCKET }}
+          source: "./asbest-os.iso"
+          target: "/asbest-os.iso"
+
+      - name: Upload to S3
+        uses: yakubique/minio-upload@v1.1.3
+        with:
+          endpoint: ${{ secrets.S3_URL}}
+          access_key: ${{ secrets.S3_KEY_ID }}
+          secret_key: ${{ secrets.S3_SECRET_ACCESS_KEY}}
+          bucket: ${{ secrets.S3_BUCKET }}
+          source: "./asbest-os.iso-CHECKSUM"
+          target: "/asbest-os.iso-CHECKSUM"
