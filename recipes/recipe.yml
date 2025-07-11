@@ -31,6 +31,7 @@ modules:
       - kdenlive
       - ffmpeg
       - gimp
+      - gwenview
       - okular
       - vlc
       # System
