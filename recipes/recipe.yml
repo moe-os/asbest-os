@@ -14,7 +14,7 @@ modules:
 
   - type: rpm-ostree
     repos:
-      - https://gist.githubusercontent.com/MoeDevelops/84b0dbc28bc48bd03367756f34bed49a/raw/381cda8fc7803df601856ff87d0d81884e16ad47/vscode.repo
+      - https://packages.microsoft.com/yumrepos/vscode/config.repo
       - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
       - https://mise.jdx.dev/rpm/mise.repo
     install:

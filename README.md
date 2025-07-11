@@ -7,7 +7,7 @@ It is primarily focused on development and Gaming.
 
 ## Installation
 
-1. Get an ISO from the latest [ISO-Build](https://github.com/moe-os/asbest-os/actions/workflows/iso.yml)
+1. Download the [ISO-File](https://s3.moedev.moe/browser/asbest-os)
 
 2. Flash it to an USB-Drive (min. 8GB) with Tools like [Balena Etcher](https://etcher.balena.io/) or [Ventoy](https://www.ventoy.net/)
 
