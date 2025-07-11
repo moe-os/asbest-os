@@ -16,7 +16,6 @@ modules:
     repos:
       - https://gist.githubusercontent.com/MoeDevelops/84b0dbc28bc48bd03367756f34bed49a/raw/381cda8fc7803df601856ff87d0d81884e16ad47/vscode.repo
       - https://raw.githubusercontent.com/terrapkg/subatomic-repos/main/terra.repo
-      - https://repository.mullvad.net/rpm/stable/mullvad.repo
       - https://mise.jdx.dev/rpm/mise.repo
     install:
       # Development
@@ -37,23 +36,9 @@ modules:
       - btop
       - fastfetch
       - kate
-      - mullvad-vpn
       - steam-devices
     remove:
       - nvtop
       - htop
-
-  - type: default-flatpaks
-    notify: true
-    system:
-      install:
-        - io.github.zen_browser.zen
-        - com.github.tchx84.Flatseal
-        - com.usebottles.bottles
-        - io.github.shiftey.Desktop
-        - com.valvesoftware.Steam
-        - com.atlauncher.ATLauncher
-        - com.obsproject.Studio
-    user: {}
 
   - type: signing
