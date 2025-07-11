@@ -31,6 +31,7 @@ modules:
       - kdenlive
       - ffmpeg
       - gimp
+      - okular
       - vlc
       # System
       - btop
