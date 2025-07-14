@@ -21,8 +21,11 @@ modules:
       # Development
       - automake
       - code
+      - clang
       - gcc
+      - lld
       - mise
+      - mold
       - zed
       # Dependencies
       - ncurses-devel
