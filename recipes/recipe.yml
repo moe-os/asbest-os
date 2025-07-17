@@ -26,6 +26,7 @@ modules:
       - lld
       - mise
       - mold
+      - patch
       - zed
       # Dependencies
       - ncurses-devel
